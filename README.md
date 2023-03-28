@@ -41,7 +41,6 @@ import {DatepickerDate} from "vue3-tir-datepicker";
 const value = ref<[DatepickerDate, DatepickerDate]>();
 </script>
 ```
-----
 
 ## Использование минимального и максимального ограничений
 ```vue
@@ -61,5 +60,31 @@ const max = new DatepickerDate(2023, 3, 30);
 const minRange = [new DatepickerDate(2023, 2, 10), new DatepickerDate(2023, 2, 12)];
 /** Максимально значение для range пикера */
 const maxRange = [new DatepickerDate(2023, 3, 30), new DatepickerDate(2023, 3, 20)]
+</script>
+```
+
+## Использование подписей
+```vue
+<template>
+    <tir-datepicker v-model="value1" :date-labels="dateLabels"/>
+    <tir-timepicker v-model="value2" :time-labels="timeLabels"/>
+    <tir-timepicker-range v-model="value3" :time-labels="timeLabels"/>
+    <tir-datepicker-range v-model="value4" :date-labels="dateLabels"/>
+</template>
+<script lang="ts" setup>
+import { DateLabels, TimeLabels } from "./vue3-tir-datepicker";
+/** Подписи для даты (20 д. 02 м. 2023г.) */
+const dateLabels = new DateLabels({
+  year: "г.",
+  month: " м. ",
+  days: " д. ",
+});
+
+/** Подписи для времени (13 ч. 15 мин. 30 сек.) */
+const timeLabels = new TimeLabels({
+  hours: " ч. ",
+  min: " мин. ",
+  sec: " сек.",
+});
 </script>
 ```
