@@ -1,4 +1,3 @@
-# test2
 ### Datepicker
 ```vue
 <template>
