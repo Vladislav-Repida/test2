@@ -101,3 +101,13 @@ const timeLabels = new TimeLabels({
 });
 </script>
 ```
+
+## Смена формата
+```vue
+<template>
+    <tir-datepicker v-model="value1" is-use-timepicker time-format="HH:MM" date-format="YYYY.MM.DD"/>
+    <tir-timepicker v-model="value2" time-format="HH:MM"/>
+    <tir-timepicker-range v-model="value3" time-format="HH:MM"/>
+    <tir-datepicker-range v-model="value4" date-format="YYYY.MM.DD"/>
+</template>
+```
