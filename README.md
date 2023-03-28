@@ -42,6 +42,19 @@ const value = ref<[DatepickerDate, DatepickerDate]>();
 </script>
 ```
 
+## Использование Timepicker в Datepicker
+```vue
+<template>
+    <tir-datepicker v-model="value1" is-use-timepicker :time-input-position="EnumInputPosition.Bottom"/>
+    <tir-datepicker-range v-model="value4"/ is-use-timepicker>
+</template>
+<script lang="ts" setup>
+import {DatepickerDate, EnumInputPosition} from "./vue3-tir-datepicker";
+const value1 = ref(new DatepickerDate(2023, 3, 28, 10, 30, 20));
+const value2 = ref<DatepickerDate>();
+</script>
+```
+
 ## Использование минимального и максимального ограничений
 ```vue
 <template>
