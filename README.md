@@ -42,5 +42,5 @@ import {DatepickerDate} from "vue3-tir-datepicker";
 const value = ref<[DatepickerDate, DatepickerDate]>();
 </script>
 ```
----
+--
 
