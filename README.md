@@ -1,10 +1,11 @@
 # test2
 ```vue
-<tir-datepicker
-    v-model="datepickerValue"
-    date-icon-left="mdi mdi-calendar-range"
-    time-icon-left="mdi mdi-clock-time-eight-outline"
-    :date-labels="dateLabels"
-    date-format="YYYY.MM.DD"
-/>
+<template>
+    <tir-datepicker v-model="value"/>
+</template>
+<script lang="ts" setup>
+import {DatepickerDate} from "vue3-tir-datepicker";
+const value = ref(new DatepickerDate());
+</script>
 ```
+
