@@ -111,3 +111,46 @@ const timeLabels = new TimeLabels({
     <tir-datepicker-range v-model="value4" date-format="YYYY.MM.DD"/>
 </template>
 ```
+
+## Использование опций быстрого выбора (в Datepicker)
+```vue
+<template>
+ <tir-datepicker v-model="value1" enable-quick-options/>
+ <tir-datepicker-range v-model="value2" enable-quick-options/>
+</template>
+```
+### Добавление кастомынх опций быстрого выбора
+```vue
+<template>
+ <tir-datepicker v-model="value1" enable-quick-options :custom-quick-options="customQuickOptions"/>
+ <tir-datepicker-range v-model="value2" enable-quick-options :custom-quick-options="customQuickOptionsRange"/>
+</template>
+<script lang="ts" setup>
+import {DatepickerDate, QuickOptionModel } from "vue3-tir-datepicker";
+const customQuickOptions = [
+  new QuickOptionModel({
+    /** Подпись */
+    title: "Тестовая опция",
+    /** Значение */
+    data: new DatepickerDate().addDays(2),
+    /** Иконка слева (optional) */
+    iconLeft: "mdi mdi-clock-time-eight-outline",
+    /** Иконка спарва (optional) */
+    iconRigth: "mdi mdi-clock-time-eight-outline",
+  }),
+];
+
+const customQuickOptionsRange = [
+  new QuickOptionModel<[DatepickerDate, DatepickerDate]>({
+    /** Подпись */
+    title: "Тестовая опция",
+    /** Значение */
+    data: [new DatepickerDate(), new DatepickerDate().addDays(2)],
+    /** Иконка слева (optional) */
+    iconLeft: "mdi mdi-clock-time-eight-outline",
+    /** Иконка спарва (optional) */
+    iconRigth: "mdi mdi-clock-time-eight-outline",
+  }),
+];
+</script>
+```
