@@ -119,7 +119,7 @@ const timeLabels = new TimeLabels({
  <tir-datepicker-range v-model="value2" enable-quick-options/>
 </template>
 ```
-### Добавление кастомынх опций быстрого выбора
+### Добавление кастомных опций быстрого выбора
 ```vue
 <template>
  <tir-datepicker v-model="value1" enable-quick-options :custom-quick-options="customQuickOptions"/>
@@ -153,4 +153,13 @@ const customQuickOptionsRange = [
   }),
 ];
 </script>
+```
+
+### Отключение дефолтных опций быстрого выбора
+
+```vue
+<template>
+ <tir-datepicker v-model="value1" enable-quick-options is-disabled-default-quick-options :custom-quick-options="customQuickOptions"/>
+ <tir-datepicker-range v-model="value2" enable-quick-options is-disabled-default-quick-options :custom-quick-options="customQuickOptionsRange"/>
+</template>
 ```
