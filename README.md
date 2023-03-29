@@ -155,7 +155,7 @@ const customQuickOptionsRange = [
 </script>
 ```
 
-### Отключение дефолтных опций быстрого выбора
+### Отключение дефолтных опций быстрого выбора `is-disabled-default-quick-options`
 
 ```vue
 <template>
